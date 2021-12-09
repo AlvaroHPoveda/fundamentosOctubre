@@ -1,7 +1,7 @@
 "use strict"
 
 let form = document.querySelector("#search-pokemon")
-let loader = document.getElementById("loader")
+//let loader = document.getElementById("loader")
 
 document.addEventListener( "DOMContentLoaded", () => fetchData() )
 form.addEventListener("submit", event => buscarPokemon(event))
@@ -14,7 +14,7 @@ form.addEventListener("submit", event => buscarPokemon(event))
 */
 
 function fetchData( pokemon = "bulbasaur" ) {
-    loader.style.display = "flex"
+    //loader.style.display = "flex"
 
     let url = `https://pokeapi.co/api/v2/pokemon/${ pokemon }`
     fetch( url )
@@ -23,6 +23,7 @@ function fetchData( pokemon = "bulbasaur" ) {
         console.log( data )
         mostrarPokemon( data )
     })
+
 }
 
 function mostrarPokemon( pokemonData ) {
@@ -34,12 +35,12 @@ function mostrarPokemon( pokemonData ) {
     p.textContent = pokemonData.name
 
     setTimeout(() => {   
-     loader.style.display = "none"
+     //loader.style.display = "none"
     }, 2000);
 }
 
 function buscarPokemon(event) {
-    loader.style.display = "flex"
+    //loader.style.display = "flex"
 
     let input = form.querySelector("input")
     let pokemonName = input.value.toLowerCase()
@@ -50,9 +51,9 @@ function buscarPokemon(event) {
 }
 
 function mostrarError() {
+    loader.style.display = "none"
     let toast = document.getElementById("toast")
     toast.classList.toggle("escondido")
-
     setTimeout(() => toast.classList.toggle("escondido"), 
     3000)
 }
