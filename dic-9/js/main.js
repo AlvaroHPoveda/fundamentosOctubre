@@ -27,7 +27,7 @@ function mostrarPersonajes( personajesData ) {
         //let name = personaje.name
         //let image = personaje.image 
 
-        const { name, image, species } = personaje
+        const { name, image, species, location, gender, status } = personaje
 
         //console.log( name, image )
 
@@ -37,7 +37,10 @@ function mostrarPersonajes( personajesData ) {
                                 <img src="${ image }" alt="">
                             </div>
                             <h5>${ name }</h5>
-                            <p>ESPECIE: <span>${ species }</span> </p>
+                            <p><span>Status: </span>${ status }</p>
+                            <p><span>especie: </span>${ species }</p>
+                            <p><span>Genero: </span>${ gender }</p>
+                            <p><span>ubicación: </span>${ location.name }</p>
                         </article>
                     `
     })
